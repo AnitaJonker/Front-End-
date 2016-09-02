@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.anita.libraryapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+        </activity>
+
+
+
+            <service
+            android:name="com.anita.libraryapplication.services.booksystem.AdultBookService"
+            android:exported="false" />
+        <service
+            android:name="com.anita.libraryapplication.services.booksystem.KidBookService"
+            android:exported="false" />
+        <service
+            android:name="com.anita.libraryapplication.services.booksystem.YoungAdultService"
+            android:exported="false" />
+        <service
+            android:name="com.anita.libraryapplication.services.booksystem.RestrictedBookService"
+            android:exported="false" />
+        <activity android:name="com.anita.libraryapplication.activities.ActivityChooseField">
+            <intent-filter>
+                <action android:name="com.anita.libraryapplication.activities.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.anita.libraryapplication.activities.ActivityBooks">
+            <intent-filter>
+                <action android:name="com.anita.libraryapplication.ActivityBooks" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.anita.libraryapplication.activities.ActivityShowDB" >
+            <intent-filter>
+                <action android:name="com.libraryapplication.activities.ActivityShowDB" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.anita.libraryapplication.activities.ActivityDisplayBooks">
+            <intent-filter>
+                <action android:name="com.anita.libraryapplication.ActivityDisplayBooks"/>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.anita.libraryapplication.services.database.admin.InsertDB"
+            android:exported="false" />
+        <service
+            android:name="com.anita.libraryapplication.services.database.admin.ShowDB"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name="com.anita.libraryapplication.services.database.admin.InsertDB"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="" />
+
+    </application>
+
+</manifest>
